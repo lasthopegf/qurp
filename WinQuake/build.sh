@@ -16,7 +16,7 @@ CCSYSROOT=/home/pi/raspberrypi/sysroot
 # directory to find khronos linux make files (with include/ containing headers! Make needs them.
 # the = in I=/ is so we can make cross compiling easier as it lets up replace the start with a different
 # system root https://gcc.gnu.org/onlinedocs/gcc/Directory-Options.html
-INCLUDES="-I=/usr/include -I=/opt/vc/include -I=/opt/vc/include/interface/vcos/pthreads -I=/opt/vc/include/interface/vmcs_host/linux "
+INCLUDES="-I/usr/include -I/opt/vc/include -I/opt/vc/include/interface/vcos/pthreads -I/opt/vc/include/interface/vmcs_host/linux "
 
 # directory containing the ARM shared libraries (rootfs, lib/ of SD card)
 # specifically libEGL.so and libGLESv2.so
@@ -59,7 +59,7 @@ echo "- - - - - - - - - - - - - - - "
 make -j4 -f make.rpi $1 ARCH=arm \
 	CC=""$CROSS_COMPILE"gcc" USE_SVN=0 USE_CURL=0 USE_OPENAL=0 \
 	CFLAGS="$SYSTEM_ROOT $INCLUDES" \
-	LDFLAGS="-lm -pthread $ARM_LIBS -lvchostif -lvcfiled_check -lbcm_host -lkhrn_static -lvchiq_arm -lopenmaxil -lbrcmEGL -lbrcmGLESv2 -lvcos -lrt -lSDL -ludev"
+	LDFLAGS="-lm -pthread $ARM_LIBS -lvchostif -lbcm_host -lkhrn_static -lvchiq_arm -lopenmaxil -lbrcmEGL -lbrcmGLESv2 -lvcos -lrt -lSDL -ludev"
 	
 exit 0
 
