@@ -26,6 +26,7 @@ For some reason using the 2nd option meant that I couldn't commit changed back t
 
 6. **You will need at least 128 MB allocated to the GPU. Run ``sudo raspi-config`` then in Advanced Options -> Memory Split set the desired value.**
 
+7. sudo apt-get install libgles2-mesa-dev
 
 ### Compiling & Building
 
